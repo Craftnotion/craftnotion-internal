@@ -1,16 +1,27 @@
+/** React Imports */
 'use client'
 import React from 'react'
+
+/** Libraries */
 import * as yup from "yup"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
+
+/** Components */
 import CustomInput from '@/app/utilities/components/form-utilities/custom-input'
+
+/** Icons */
 import Logo from '../../../../../public/brand/logo.svg'
+import ArrowRight from '../../../../../public/icons/arrow-small-right.svg'
+
+/** Local Imports */
 import FormFields from '../../../utilities/models/formfields.json'
+
+/** Styles */
 import styles from './styles.module.scss'
 
-type Props = {}
-
-const InternalLoginPage = (props: Props) => {
+/** Main Export */
+const InternalLoginPage = () => {
 
     const { handleSubmit, control } = useForm<LoginFormTypes>({
         resolver: yupResolver(LoginSchema)
@@ -53,11 +64,13 @@ const InternalLoginPage = (props: Props) => {
                                 label: true
                             }}
                         />
-                        <button type="submit">Submit</button>
+                        <button type="submit">
+                            <span>Submit</span>
+                            <div>
+                                <ArrowRight />
+                            </div>
+                        </button>
                     </form>
-                </div>
-                <div className={styles.cn_footer_wrap}>
-                    
                 </div>
             </div>
         </div>

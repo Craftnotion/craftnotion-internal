@@ -12,8 +12,8 @@
             "label": "Password*",
             "placeholder": "enter password",
             "errors": {
-                "min": "password has to be minimum {{min}} characters!",
-                "max": "password can not exceed {{max}} characters!",
+                "min": "password has to be minimum 8 characters!",
+                "max": "password can not exceed 25 characters!",
                 "required": "password is required and can not be empty!"
             }
         }
