@@ -1,0 +1,69 @@
+$colors: (
+    cn_dark: #151A25,
+    cn_blue: #2558ED,
+    cn_pale_yellow: #E1FFC4,
+    cn_back_gray: #EFF4F9,
+    cn_black_text: #010101,
+    cn_lgt_text: #888888,
+    cn_white: #ffffff
+);
+
+@mixin xs {
+    @media (max-width: 400px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: 550px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mini-tab {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin mini-desk {
+    @media (max-width: 1258px) {
+        @content;
+    }
+}
+
+@mixin desk {
+    @media (max-width: 1440px) {
+        @content;
+    }
+}
+
+@mixin fourk {
+    @media (min-width: 2200px) {
+        @content;
+    }
+}
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+@mixin contain {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.65rem;
+    padding-right: 1.65rem;
+}

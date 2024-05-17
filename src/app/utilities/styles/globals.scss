@@ -1,0 +1,104 @@
+@import './_mixin.scss';
+
+:root {
+    font-size: 16px;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+    font-family: var(--font_primary)!important;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    font-family: var(--font_primary)!important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+
+    body {
+        overflow-x: hidden;
+
+        h1, h2, h3, h4, h5, h6, p, a, ul li, label {
+            margin-bottom: 0;
+        }
+
+        input,
+        button,
+        textarea {
+            font-family: var(--font_two);
+        }
+
+        input {
+            font-family: var(--font_primary)!important;
+            &:focus, &:active {
+                box-shadow: 0;
+                outline: 0;
+            }
+        }
+
+        a {
+            text-decoration: none !important;
+            font-family: var(--font_primary)!important;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        button,
+        button:active,
+        button:focus,
+        input,
+        input:active,
+        input:focus,
+        textarea,
+        textarea:active,
+        textarea:focus,
+        input[type=submit]:active,
+        input[type=submit]:focus {
+            box-shadow: none;
+            border: 0;
+            outline: 0;
+            padding: 0;
+            background: transparent;
+            font-family: var(--font_primary)!important;
+            resize: none;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+        
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            transition: "color 9999s ease-out, background-color 9999s ease-out";
+            transition-delay: 9999s;
+        }
+    }
+}

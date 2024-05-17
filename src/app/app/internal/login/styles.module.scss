@@ -1,0 +1,98 @@
+@import '../../../utilities/styles/_mixin';
+
+.cn_outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    .cn_inner {
+        width: 680px;
+        padding: 4rem;
+        border: 1px solid #e1e1e1;
+        background-color: #F5F5F5;
+
+        .cn_logo_wrap {
+            height: 80px;
+            aspect-ratio: 1/1;
+
+            svg {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .cn_title_wrap {
+            margin: 2.5rem 0;
+            
+            h1 {
+                font-size: 2rem;
+                line-height: 1;
+                letter-spacing: 0.2px;
+                color: color(cn_black_text);
+                margin-bottom: 0.75rem;
+            }
+
+            p {
+                font-size: 1.25rem;
+                line-height: 1.35;
+                font-weight: 100;
+                color: color(cn_black_text);
+                letter-spacing: 0.2px;
+                max-width: 85%;
+            }
+        }
+
+        .cn_form_wrap {
+
+            form {
+                display: block;
+
+                .cn_input_wrap {
+                    position: relative;
+                    margin-bottom: 1rem;
+    
+                    label {
+                        display: block;
+                        font-size: 1rem;
+                        line-height: 1.35;
+                        font-weight: 400;
+                        letter-spacing: 0.2px;
+                        margin-bottom: 0.25rem;
+                    }
+                    
+                    .cn_input {
+                        display: block;
+                        width: 100%;
+                        height: 60px;
+                        background-color: #fff;
+                        border: 1px solid rgba($color: #000000, $alpha: 0.15);
+                        box-shadow: 2px 2px 20px 0 rgba($color: #000000, $alpha: 0.025);
+                        padding: 0 1rem;
+                    }
+    
+                    .error_msg {
+                        line-height: 1.3;
+                        margin-top: 8px;
+                        // color: color(error);
+                        font-size: 14px;
+                        width: fit-content;
+                        // background-color: rgba($color: color(error), $alpha: 0.1);
+                        padding: 5px 8px;
+                        border-radius: 4px;
+                    }
+                }
+
+                button[type=submit] {
+                    height: 50px;
+                    background: linear-gradient(to right bottom, color(cn_blue), rgba(color(cn_blue), 0.8));
+                    padding: 0 2rem;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: color(cn_white);
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
