@@ -22,6 +22,7 @@ const InternalLoginPage = (props: Props) => {
 
     return (
         <div className={styles.cn_outer}>
+            <div className={styles.cn_bg}></div>
             <div className={styles.cn_inner}>
                 <div className={styles.cn_logo_wrap}>
                     <Logo />

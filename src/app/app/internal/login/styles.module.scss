@@ -5,12 +5,25 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    position: relative;
 
+    .cn_bg {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        right: 1rem;
+        bottom: 50%;
+        background: linear-gradient(#181718 14%, #352155 80%, #4b2883);
+        border-radius: 1.5rem;
+        z-index: -1;
+    }
+    
     .cn_inner {
         width: 680px;
         padding: 4rem;
-        border: 1px solid #e1e1e1;
-        background-color: #F5F5F5;
+        border-radius: 1.5rem;
+        background-color: color(cn_white);
+        box-shadow: 0 2px 18px rgba(#4b2883,.23);
 
         .cn_logo_wrap {
             height: 80px;
