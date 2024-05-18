@@ -11,7 +11,7 @@
         left: 1rem;
         right: 1rem;
         bottom: 50%;
-        background: url('../../../../../public/textures/noise.png') repeat, linear-gradient(darken(color(cn_blue), 45) 14%, darken(color(cn_blue), 30) 80%, darken(color(cn_blue), 15));
+        background: url('../../../../../public/textures/noise.png') repeat, linear-gradient(darken(color(cn_blue), 50) 14%, darken(color(cn_blue), 35) 80%, darken(color(cn_blue), 20));
         border-radius: 1.5rem;
         z-index: -1;
 
@@ -55,9 +55,9 @@
             p {
                 font-size: 1.075rem;
                 line-height: 1.4;
-                letter-spacing: 0.02rem;
+                letter-spacing: 0.03rem;
                 color: color(cn_black_text);
-                font-weight: 100;
+                font-weight: 300;
                 max-width: 85%;
             }
         }
