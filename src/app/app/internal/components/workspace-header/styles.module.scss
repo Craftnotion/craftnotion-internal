@@ -1,0 +1,97 @@
+@import '../../../../utilities/styles/_mixin';
+
+.cn_header {
+
+    .cn_header_wrap {
+        padding: 1rem 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &_inner {
+            display: flex;
+            align-items: center;
+            flex: 1;
+
+            .cn_logo_wrap {
+                display: flex;
+                align-items: center;
+             
+                svg {
+                    height: 2.5rem;
+                    aspect-ratio: 1/1;
+                }
+    
+                p {
+                    margin-left: 0.5rem;
+                    font-weight: 500;
+                    font-size: 1.25rem;                
+                    color: color(cn_black_text);
+                }
+            }
+    
+            .cn_menu {
+                display: flex;
+                align-items: center;
+                margin-left: 3rem;
+    
+                li a {
+                    font-size: 1rem;
+                    letter-spacing: 0.035rem;
+                    font-weight: 500;
+                    padding: 1rem 1.5rem;
+                    display: flex;
+                    align-items: center;
+                    border-radius: 20px;
+                    border: 1px solid color(cn_border);
+                    margin: 0 1px;
+                    transition: all 0.2s ease-in-out;
+
+                    svg {
+                        height: 1.15rem;
+                        aspect-ratio: 1/1;
+                        margin-right: 0.75rem;
+                    }
+
+                    &:hover {
+                        background: color(cn_back_surface_2);
+                    }
+
+                    &.cn_active {
+                        background: url('../../../../../../public/textures/noise.png') 10px repeat, linear-gradient(to right bottom, color(cn_dark), color(cn_dark));
+                        color: color(cn_white);
+
+                        svg {
+                            fill: color(cn_white);
+                        }
+                    }
+                }
+            }
+        }
+
+        .cn_other_controls {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            button {
+                height: 50px;
+                aspect-ratio: 1/1;
+                margin-left: 1rem;
+                border-radius: 50%;
+                background-color: color(cn_back_surface_1);
+
+                img {
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+                svg {
+                    height: 20px;
+                    aspect-ratio: 1/1;
+                }
+            }
+        }
+    }
+}

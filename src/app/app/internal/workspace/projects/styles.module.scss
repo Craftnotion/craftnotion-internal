@@ -1,0 +1,186 @@
+@import '../../../../utilities/styles/_mixin';
+
+.cn_page {
+    padding: 3rem 0;
+
+    &_header {
+
+        &_wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+
+            h1 {
+                font-size: 2rem;
+                font-weight: 500;
+                letter-spacing: 0.05rem;
+            }
+
+            button {
+                height: 3rem;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                background: color(cn_back_surface_1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1rem;
+                font-weight: 600;
+                color: color(cn_white);
+                transition: all 0.2s ease-in-out;
+
+                svg {
+                    height: 1.15rem;
+                    aspect-ratio: 1/1;
+                    fill: color(cn_dark);
+                }
+
+                &:hover {
+                    background: color(cn_dark);
+                    transform: rotate(90deg);
+                    box-shadow:
+                        0 0 0 3px color(cn_back_surface_2),
+                        0 0 0 6px color(cn_back_surface_2);
+
+                    svg {
+                        fill: color(cn_white);
+                    }
+                }
+            }
+        }
+
+        .cn_page_search {
+            height: 55px;
+            background: color(cn_back_surface_2);
+            border-radius: 20px;
+            display: flex;
+
+            &:focus-within {
+                box-shadow:
+                    0 0 0 2.5px rgba($color: color(cn_back_surface_3), $alpha: 0.85),
+                    0 0 0 5px rgba($color: color(cn_back_surface_3), $alpha: 0.35);
+            }
+
+            > div {
+                height: 53px;
+                aspect-ratio: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    height: 1.15rem;
+                    aspect-ratio: 1/1;
+                }
+            }
+
+            input {
+                flex: 1;
+                font-size: 1.15rem;
+                font-weight: 500;
+
+                &::placeholder {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    &_body {
+
+        .cn_projects_list {
+            margin-top: 2rem;
+
+            &_wrap {
+                background-color: color(cn_white);
+                border-radius: 20px;
+
+                &_inner {
+                    padding: 0 1rem;
+
+                    .cn_projects_list_item {
+                        display: flex;
+                        align-items: flex-start;
+                        padding: 1rem 0;
+    
+                        &:not(:last-child) {
+                            border-bottom: 1.15px solid rgba($color: color(cn_back_surface_3), $alpha: 0.5);
+                        }
+    
+                        &_icon {
+                            height: 3.5rem;
+                            aspect-ratio: 1;
+                            border-radius: 50%;
+                            background-color: color(cn_back_surface_5);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-right: 1.15rem;
+    
+                            svg {
+                                height: 1.5rem;
+                                aspect-ratio: 1;
+                                fill: color(cn_dark);
+                            }
+                        }
+
+                        &_content {
+                            flex: 1;
+
+                            .cn_project_name {
+                                font-size: 1rem;
+                                font-weight: bold;
+                                letter-spacing: 0.035rem;
+                                color: color(cn_black_text);
+                                margin-bottom: 0.75rem;
+                            }
+                            
+                            &_inner {
+                                display: flex;
+                                flex-wrap: wrap;
+
+                                .cn_project_badge {
+                                    border-radius: 0.35rem;
+                                    margin-right: 0.5rem;
+                                    margin-bottom: 0.5rem;
+                                    padding: 0.45rem 0.6rem;
+                                    border: 1px solid color(cn_border);
+                                    background-color: rgba($color: color(cn_back_surface_3), $alpha: 0.65);
+                                    border-radius: 10px;
+                                    display: flex;
+                                    align-items: center;
+
+                                    &_dot {
+                                        height: 0.65rem;
+                                        aspect-ratio: 1;
+                                        border-radius: 50%;
+                                        background-color: color(cn_white);
+                                        outline: 1px solid color(cn_white);
+                                        border: 2px solid rgba($color: color(cn_back_surface_3), $alpha: 0.65);
+                                        margin-right: 0.45rem;
+                                    }
+
+                                    p {
+                                        font-size: 0.85rem;
+                                        letter-spacing: 0.02rem;
+                                        line-height: 1rem;
+
+                                        &.cn_project_badge_label {
+                                            font-weight: 300;
+                                            padding-right: 0.25rem;
+                                        }
+    
+                                        &.cn_project_badge_value {
+                                            font-weight: 500;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

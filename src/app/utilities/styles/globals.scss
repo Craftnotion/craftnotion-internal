@@ -116,3 +116,10 @@ html {
         }
     }
 }
+
+.contain {
+    width: 72rem;
+    max-width: calc(100% - 4rem);
+    margin-left: auto;
+    margin-right: auto;
+}
