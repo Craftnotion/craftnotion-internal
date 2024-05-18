@@ -4,6 +4,10 @@
     min-height: 100vh;
     position: relative;
     padding: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
     .cn_bg {
         position: absolute;
@@ -13,11 +17,21 @@
         bottom: 50%;
         background: url('../../../../../public/textures/noise.png') repeat, linear-gradient(darken(color(cn_blue), 50) 14%, darken(color(cn_blue), 35) 80%, darken(color(cn_blue), 20));
         border-radius: 1.5rem;
+        overflow: hidden;
         z-index: -1;
 
         @include sm {
             inset: 0 0 50% 0;
             border-radius: 0;
+        }
+
+        svg {
+            height: 150%;
+            aspect-ratio: 1/1;
+            position: absolute;
+            top: 50%;
+            transform: translate(-45%, -50%);
+            opacity: 0.25;
         }
     }
     
@@ -166,5 +180,12 @@
                 }
             }
         }
+    }
+
+    > button {
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        color: color(cn_lgt_text);
     }
 }

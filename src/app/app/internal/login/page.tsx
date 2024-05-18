@@ -12,6 +12,7 @@ import CustomInput from '@/app/utilities/components/form-utilities/custom-input'
 
 /** Icons */
 import Logo from '../../../../../public/brand/logo.svg'
+import BackObject from '../../../../../public/textures/back_object.svg'
 import ArrowRight from '../../../../../public/icons/arrow-small-right.svg'
 
 /** Local Imports */
@@ -33,7 +34,9 @@ const InternalLoginPage = () => {
 
     return (
         <div className={styles.cn_outer}>
-            <div className={styles.cn_bg}></div>
+            <div className={styles.cn_bg}>
+                <BackObject />
+            </div>
             <div className={styles.cn_inner}>
                 <div className={styles.cn_logo_wrap}>
                     <Logo />
@@ -73,6 +76,7 @@ const InternalLoginPage = () => {
                     </form>
                 </div>
             </div>
+            <button>back to website</button>
         </div>
     )
 }
