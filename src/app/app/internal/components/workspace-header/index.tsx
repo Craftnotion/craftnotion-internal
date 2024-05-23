@@ -7,8 +7,9 @@ import Image from 'next/image'
 import Logo from '../../../../../../public/brand/logo.svg'
 import BellIcon from '../../../../../../public/icons/bell.svg'
 import DashboardIcon from '../../../../../../public/icons/dash.svg'
-import ProjectsIcon from '../../../../../../public/icons/projects.svg'
 import UsersIcon from '../../../../../../public/icons/users.svg'
+import ProjectsIcon from '../../../../../../public/icons/projects.svg'
+import MilestonesIcon from '../../../../../../public/icons/milestone.svg'
 import TaskIcon from '../../../../../../public/icons/tasks.svg'
 
 /** Styles */
@@ -36,14 +37,20 @@ const WorkspaceHeader: FC<Props> = () => {
                         </li>
                         <li>
                             <Link href="/">
+                                <UsersIcon />
+                                Users
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/">
                                 <ProjectsIcon />
                                 Projects
                             </Link>
                         </li>
                         <li>
                             <Link href="/">
-                                <UsersIcon />
-                                Users
+                                <MilestonesIcon />
+                                Milestones
                             </Link>
                         </li>
                         <li>

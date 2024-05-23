@@ -43,18 +43,16 @@ const ManagementProjectsPage = () => {
                                                 </div>
                                                 <div className={styles.cn_projects_list_item_content}>
                                                     <p className={styles.cn_project_name}>{project.name}</p>
-                                                    <div className={styles.cn_projects_list_item_content_inner}>
+                                                    {/* <div className={styles.cn_projects_list_item_content_inner}>
                                                         <div className={styles.cn_project_badge}>
-                                                            <div className={styles.cn_project_badge_dot}/>
                                                             <p className={styles.cn_project_badge_label}>Start</p>
                                                             <p className={styles.cn_project_badge_value}>{project.start}</p>
                                                         </div>
                                                         <div className={styles.cn_project_badge}>
-                                                            <div className={styles.cn_project_badge_dot}/>
                                                             <p className={styles.cn_project_badge_label}>Due</p>
                                                             <p className={styles.cn_project_badge_value}>{project.deadline}</p>
                                                         </div>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                             </div>
                                         )

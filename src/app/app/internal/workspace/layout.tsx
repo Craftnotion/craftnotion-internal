@@ -12,7 +12,7 @@ type Props = {
 /** Main Export */
 const layout: FC<Props> = ({ children }) => {
     return (
-        <div style={{minHeight: '100vh', backgroundColor: '#E7F3EB'}}>
+        <div style={{minHeight: '100vh', backgroundColor: '#FFC8C8'}}>
             <WorkspaceHeader />
             {children}
         </div>
