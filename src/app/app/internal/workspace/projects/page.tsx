@@ -1,5 +1,9 @@
 /** React Imports */
 import React from 'react'
+import Image from 'next/image'
+
+/** React Imports */
+import { DateTime } from "luxon"
 
 /** Icons */
 import PlusIcon from '../../../../../../public/icons/plus.svg'
@@ -38,19 +42,55 @@ const ManagementProjectsPage = () => {
                                 ProjectsData.map(project => {
                                     return (
                                         <div className={styles.cn_projects_list_item} key={project.id}>
-                                            <div className={styles.cn_projects_list_item_icon}>
-                                                <ProjectIcon />                                                    
-                                            </div>
-                                            <div className={styles.cn_projects_list_item_content}>
-                                                <p className={styles.cn_project_name}>{project.name}</p>
-                                                <div className={styles.cn_projects_list_item_content_inner}>
+                                            <div className={styles.cn_projects_list_item_main}>
+                                                <div className={styles.cn_icon}>
+                                                    <ProjectIcon />
+                                                </div>
+                                                <div className={styles.cn_project_info}>
                                                     <div className={styles.cn_project_badge}>
-                                                        <p className={styles.cn_project_badge_label}>Start</p>
-                                                        <p className={styles.cn_project_badge_value}>{project.start}</p>
+                                                        <p>{project.status}</p>
                                                     </div>
+                                                    <p className={styles.cn_project_name}>{project.name}</p>
+                                                </div>
+                                            </div>
+                                            <div className={styles.cn_projects_list_item_control}>
+                                                <div className={styles.cn_project_team_members}>
+                                                    <div className={styles.cn_project_team_member_item}>
+                                                        <Image
+                                                            src="https://i.pravatar.cc/300"
+                                                            fill
+                                                            alt='name'
+                                                        />
+                                                    </div>
+                                                    <div className={styles.cn_project_team_member_item}>
+                                                        <Image
+                                                            src="https://i.pravatar.cc/300"
+                                                            fill
+                                                            alt='name'
+                                                        />
+                                                    </div>
+                                                    <div className={styles.cn_project_team_member_item}>
+                                                        <Image
+                                                            src="https://i.pravatar.cc/300"
+                                                            fill
+                                                            alt='name'
+                                                        />
+                                                    </div>
+                                                    <button className={styles.cn_project_team_member_add}>
+                                                        <PlusIcon />
+                                                    </button>
+                                                </div>
+                                                <div className={styles.cn_projects_list_item_content_inner}>
+                                                    {
+                                                        project.start ?
+                                                        <div className={styles.cn_project_badge}>
+                                                            <p className={styles.cn_project_badge_label}>Started On</p>
+                                                            <p className={styles.cn_project_badge_value}>{DateTime.fromJSDate(project.start).toFormat('ccc, dd MMM')}</p>
+                                                        </div> : null
+                                                    }
                                                     <div className={styles.cn_project_badge}>
-                                                        <p className={styles.cn_project_badge_label}>Due</p>
-                                                        <p className={styles.cn_project_badge_value}>{project.deadline}</p>
+                                                        <p className={styles.cn_project_badge_label}>Due Date</p>
+                                                        <p className={styles.cn_project_badge_value}>{DateTime.fromJSDate(project.deadline).toFormat('ccc, dd MMM')}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -73,8 +113,8 @@ type StatusListProps = 'Completed' | 'Overdue' | 'On Track' | 'Priority'
 type ProjectsDataProps = {
     id: string;
     name: string;
-    start: string;
-    deadline: string;
+    start?: Date;
+    deadline: Date;
     updated_at: string;
     client: {
         name: string;
@@ -93,8 +133,8 @@ const ProjectsData: ProjectsDataProps = [
     {
         id: '001',
         name: 'Lyt Til Danke Salmer',
-        start: '5th March, 24',
-        deadline: '20th March, 24',
+        start: new Date(),
+        deadline: new Date(),
         updated_at: '2 hours ago',
         client: {
             name: 'Himanshu Sharma'
@@ -111,8 +151,7 @@ const ProjectsData: ProjectsDataProps = [
     {
         id: '002',
         name: 'Lyt Til Danke Salmer',
-        start: '5th March, 24',
-        deadline: '20th March, 24',
+        deadline: new Date(),
         updated_at: '2 hours ago',
         client: {
             name: 'Himanshu Sharma'
@@ -129,8 +168,8 @@ const ProjectsData: ProjectsDataProps = [
     {
         id: '003',
         name: 'Lyt Til Danke Salmer',
-        start: '5th March, 24',
-        deadline: '20th March, 24',
+        start: new Date(),
+        deadline: new Date(),
         updated_at: '2 hours ago',
         client: {
             name: 'Himanshu Sharma'
@@ -147,8 +186,8 @@ const ProjectsData: ProjectsDataProps = [
     {
         id: '004',
         name: 'Lyt Til Danke Salmer',
-        start: '5th March, 24',
-        deadline: '20th March, 24',
+        start: new Date(),
+        deadline: new Date(),
         updated_at: '2 hours ago',
         client: {
             name: 'Himanshu Sharma'
@@ -165,8 +204,7 @@ const ProjectsData: ProjectsDataProps = [
     {
         id: '005',
         name: 'Lyt Til Danke Salmer',
-        start: '5th March, 24',
-        deadline: '20th March, 24',
+        deadline: new Date(),
         updated_at: '2 hours ago',
         client: {
             name: 'Himanshu Sharma'
@@ -183,8 +221,8 @@ const ProjectsData: ProjectsDataProps = [
     {
         id: '006',
         name: 'Lyt Til Danke Salmer',
-        start: '5th March, 24',
-        deadline: '20th March, 24',
+        start: new Date(),
+        deadline: new Date(),
         updated_at: '2 hours ago',
         client: {
             name: 'Himanshu Sharma'

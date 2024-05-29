@@ -17,18 +17,20 @@ const InternalLoginPage = () => {
                 <BackObject />
             </div>
             <div className={styles.cn_inner}>
-                <div className={styles.cn_logo_wrap}>
-                    <Logo />
+                <div>
+                    <div className={styles.cn_logo_wrap}>
+                        <Logo />
+                    </div>
+                    <div className={styles.cn_title_wrap}>
+                        <h1>Welcome to Your Project Workspace</h1>
+                        <p>Sign in to connect with your team, share ideas, and achieve project goals</p>
+                    </div>
+                    <div className={styles.cn_form_wrap}>
+                        <InternalLoginForm />
+                    </div>
                 </div>
-                <div className={styles.cn_title_wrap}>
-                    <h1>Welcome to Your Project Workspace</h1>
-                    <p>Sign in to connect with your team, share ideas, and achieve project goals</p>
-                </div>
-                <div className={styles.cn_form_wrap}>
-                    <InternalLoginForm />
-                </div>
+                <button>back to website</button>
             </div>
-            <button>back to website</button>
         </div>
     )
 }
