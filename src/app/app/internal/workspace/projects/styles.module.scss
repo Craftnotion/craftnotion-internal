@@ -12,39 +12,75 @@
             padding: 1rem 0;
 
             h1 {
-                font-size: 2rem;
-                font-weight: 500;
+                color: color(cn_black_text);
+                font-size: 1.8rem;
+                font-weight: 400;
                 letter-spacing: 0.05rem;
             }
 
             button {
                 height: 3rem;
-                aspect-ratio: 1;
-                border-radius: 50%;
-                background: color(cn_back_surface_1);
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                width: 3rem;
+                padding: 0.5rem;
+                border-radius: 1.5rem;
+                background: linear-gradient(to right bottom, color(cn_prime_1), color(cn_prime_2));
+                flex-shrink: 0;
                 font-size: 1rem;
                 font-weight: 600;
                 color: color(cn_white);
+                position: relative;
+                box-shadow:
+                    0 0 0 3px lighten($color: color(cn_prime_1), $amount: 15);
                 transition: all 0.2s ease-in-out;
 
-                svg {
-                    height: 1.15rem;
-                    aspect-ratio: 1/1;
-                    fill: color(cn_dark);
+                span {
+                    width: 2rem;
+                    aspect-ratio: 1;
+                    border-radius: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: 
+                        background-color 0.2s ease-in-out,
+                        transform 0.2s ease-in-out 0.2s;
+
+                    svg {
+                        height: 1.15rem;
+                        aspect-ratio: 1/1;
+                        fill: color(cn_white);
+                        transition: fill 0.2s ease-in-out;
+                    }
+                }
+
+                p {
+                    color: color(cn_white);
+                    font-size: 1rem;
+                    letter-spacing: 0.035rem;
+                    font-weight: 300;
+                    padding: 0 .65rem;
+                    white-space: nowrap;
+                    position: absolute;
+                    top: 50%;
+                    right: 0.5rem;
+                    transform: translateY(-50%);
+                    opacity: 0;
+                    transition: all 0.2s ease-in-out;
                 }
 
                 &:hover {
-                    background: color(cn_dark);
-                    transform: rotate(90deg);
-                    box-shadow:
-                        0 0 0 3px color(cn_white),
-                        0 0 0 6px color(cn_back_surface_2);
+                    width: 160px;                    
 
-                    svg {
-                        fill: color(cn_white);
+                    p {
+                        opacity: 1;
+                    }
+                    
+                    span {
+                        transform: rotate(90deg);
+                        background-color: color(cn_white);
+
+                        svg {
+                            fill: color(cn_prime_1);
+                        }
                     }
                 }
             }
@@ -52,20 +88,21 @@
 
         .cn_page_search {
             height: 55px;
-            background: color(cn_back_surface_2);
+            background: color(cn_surface_gray);
             border-radius: 20px;
             display: flex;
             transition: all 0.2s ease-in-out;
 
             &:hover {
-                box-shadow:
-                    0 0 0 2.5px rgba($color: color(cn_back_surface_3), $alpha: 0.85);
+                box-shadow: 
+                    0 0 0 3px darken($color: color(cn_surface_gray), $amount: 40),
+                    0 0 0 6px darken($color: color(cn_surface_gray), $amount: 10);
             }
 
             &:focus-within {
-                box-shadow:
-                    0 0 0 2.5px rgba($color: color(cn_back_surface_3), $alpha: 0.85),
-                    0 0 0 7.5px rgba($color: color(cn_back_surface_3), $alpha: 0.25);
+                box-shadow: 
+                    0 0 0 3px darken($color: color(cn_surface_gray), $amount: 25),
+                    0 0 0 6px darken($color: color(cn_surface_gray), $amount: 10);
             }
 
             > div {
@@ -98,110 +135,93 @@
         .cn_projects_list {
             margin-top: 2rem;
 
-            &_wrap {
-                // background-color: color(cn_white);
-                // border-radius: 20px;
+            &_wrap {                
 
-                &_inner {
-                    // padding: 1rem;
+                .cn_projects_list_item {
+                    background-image: linear-gradient(to right bottom, rgba(color(cn_surface_gray), 0.8), rgba(color(cn_surface_gray), 0.15));
+                    box-shadow: 0 0 0 1px darken($color: color(cn_surface_gray), $amount: 1);
+                    border-radius: 20px;
+                    margin-bottom: 1.25rem;
+                    display: flex;
+                    align-items: flex-start;
+                    padding: 1rem;
+                    border-radius: 2rem;
+                    position: relative;
+                    transition: all 0.2s ease-in-out;
 
-                    .cn_projects_list_item {
-                        display: flex;
-                        // align-items: flex-start;
-                        align-items: center;
-                        padding: 1rem;
-                        border-radius: 2rem;
-                        position: relative;
-                        transition: all 0.2s ease-in-out;                     
-    
-                        &:not(:last-child) {
-                            &:after {
-                                content: '';
-                                display: block;
-                                position: absolute;
-                                bottom: 0;
-                                left: 2rem;
-                                right: 2rem;
-                                height: 0.5px;
-                                background-color: color(cn_back_surface_1);
-                            }
+                    &:hover {
+                        box-shadow: 
+                            0 0 0 3px color(cn_back_accent_1),
+                            0 0 0 6px lighten($color: color(cn_back_accent_1), $amount: 15);
+
+                        &:after {
+                            content: none;
                         }
 
-                        &:hover {
-                            background-color: color(cn_back_surface_1);
+                        .cn_projects_list_item_icon {
 
-                            &:after {
-                                content: none;
-                            }
-                        }   
-    
-                        &_icon {
-                            height: 3.5rem;
-                            aspect-ratio: 1;
-                            border-radius: 50%;
-                            background-color: color(cn_back_surface_5);
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            margin-right: 1.15rem;
-                            transition: all 0.2s ease-in-out;
-    
                             svg {
-                                height: 1.5rem;
-                                aspect-ratio: 1;
-                                fill: color(cn_dark);
-                                transition: all 0.2s ease-in-out;
+                                transform: rotate(180deg);
                             }
                         }
+                    }   
 
-                        &_content {
-                            flex: 1;
+                    &_icon {
+                        height: 3.5rem;
+                        aspect-ratio: 1;
+                        border-radius: 50%;
+                        background-image: linear-gradient(to right bottom, color(cn_back_accent_1), lighten(color(cn_back_accent_1), 5));
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 1.15rem;
+                        transition: all 0.2s ease-in-out;
 
-                            .cn_project_name {
-                                font-size: 1.25rem;
-                                // font-weight: bold;
-                                letter-spacing: 0.035rem;
-                                color: color(cn_black_text);
-                                // margin-bottom: 0.75rem;
-                            }
-                            
-                            &_inner {
+                        svg {
+                            height: 1.5rem;
+                            aspect-ratio: 1;
+                            fill: color(cn_surface_gray);
+                            transition: all 0.2s ease-in-out;
+                        }
+                    }
+
+                    &_content {
+                        flex: 1;
+
+                        .cn_project_name {
+                            font-size: 1.15rem;
+                            letter-spacing: 0.035rem;
+                            color: color(cn_black_text);
+                            font-weight: 600;
+                            margin-bottom: 0.75rem;
+                        }
+                        
+                        &_inner {
+                            display: flex;
+                            flex-wrap: wrap;
+
+                            .cn_project_badge {
+                                margin-right: 0.5rem;
+                                margin-bottom: 0.5rem;
                                 display: flex;
-                                flex-wrap: wrap;
+                                align-items: center;
+                                background-image: linear-gradient(to right, rgba(color(cn_white), 0.5), transparent 90%);
+                                border-radius: 8px;
+                                padding: 0.35rem 0.65rem;
 
-                                .cn_project_badge {
-                                    border-radius: 0.35rem;
-                                    margin-right: 0.5rem;
-                                    margin-bottom: 0.5rem;
-                                    padding: 0.45rem 0.6rem;
-                                    border-radius: 10px;
-                                    display: flex;
-                                    align-items: center;
+                                p {
+                                    font-size: 0.85rem;
+                                    letter-spacing: 0.02rem;
+                                    line-height: 1rem;
 
-                                    p {
-                                        font-size: 0.85rem;
-                                        letter-spacing: 0.02rem;
-                                        line-height: 1rem;
-
-                                        &.cn_project_badge_label {
-                                            font-weight: 300;
-                                            padding-right: 0.25rem;
-                                        }
-    
-                                        &.cn_project_badge_value {
-                                            font-weight: 500;
-                                        }
+                                    &.cn_project_badge_label {
+                                        font-weight: 300;
+                                        padding-right: 0.25rem;
                                     }
-                                }
-                            }
-                        }
 
-                        &:hover {
-
-                            .cn_projects_list_item_icon {
-
-                                svg {
-                                    transform: rotate(180deg);
+                                    &.cn_project_badge_value {
+                                        font-weight: 500;
+                                    }
                                 }
                             }
                         }

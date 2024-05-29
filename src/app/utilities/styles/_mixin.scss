@@ -1,11 +1,19 @@
 $colors: (
+    cn_surface_gray: #E8EBEC,
+    cn_prime_1: #4B98FF,
+    cn_prime_2: #0D72FD,
+    cn_dark: #24272F,
+    cn_back_accent_1: #A191DE,
+    cn_back_accent_2: #F0F423,
+    cn_back_accent_3: #11F287,
+    cn_back_accent_4: #DAFDBB,
+
     cn_back_surface: #EFEEFF,
     cn_back_surface_1: #F6FAF6,
     cn_back_surface_2: #E5EAE5,
     cn_back_surface_3: #FFC8C8,
     cn_back_surface_4: #C7E3FE,
     cn_back_surface_5: #FFE9B5,
-    cn_dark: #151A25,
     cn_blue: #2558ED,
     cn_pale_yellow: #E1FFC4,
     cn_back_gray: #EFF4F9,
@@ -14,6 +22,16 @@ $colors: (
     cn_white: #ffffff,
     cn_border: #e0e0e0
 );
+
+// background-color:#b4d7c0;
+// background-image:repeating-linear-gradient(
+//   -45deg,
+//   #283f59 0,
+//   #283f59 2px,
+//   transparent 2px,
+//   transparent 4px
+// );
+// height:100vh;
 
 @mixin xs {
     @media (max-width: 400px) {

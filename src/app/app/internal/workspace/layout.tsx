@@ -4,6 +4,9 @@ import React, { FC } from 'react'
 /** Components */
 import WorkspaceHeader from '../components/workspace-header'
 
+/** Styles */
+import styles from './layout.module.scss'
+
 /** Main Export Props */
 type Props = {
     children: React.ReactNode
@@ -12,7 +15,7 @@ type Props = {
 /** Main Export */
 const layout: FC<Props> = ({ children }) => {
     return (
-        <div style={{minHeight: '100vh', backgroundColor: '#FFC8C8'}}>
+        <div className={styles.cn_layout}>
             <WorkspaceHeader />
             {children}
         </div>

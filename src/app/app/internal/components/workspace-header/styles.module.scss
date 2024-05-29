@@ -18,33 +18,34 @@
                 align-items: center;
              
                 svg {
-                    height: 2.5rem;
+                    height: 3rem;
                     aspect-ratio: 1/1;
                 }
     
                 p {
-                    margin-left: 0.5rem;
-                    font-weight: 500;
                     font-size: 1.25rem;                
                     color: color(cn_black_text);
+                    letter-spacing: 0.2px;
+                    font-weight: 200;
+                    margin-left: 0.5rem;
                 }
             }
     
             .cn_menu {
                 display: flex;
                 align-items: center;
-                margin-left: 3rem;
+                margin-left: 5%;
     
                 li a {
                     font-size: 1rem;
                     letter-spacing: 0.035rem;
                     font-weight: 500;
-                    padding: 1rem 1.5rem;
+                    padding: 1rem 1.45rem;
                     display: flex;
                     align-items: center;
                     border-radius: 20px;
-                    border: 1px solid color(cn_border);
-                    margin: 0 1px;
+                    background-color: color(cn_surface_gray);
+                    margin: 0 .5rem;
                     transition: all 0.2s ease-in-out;
 
                     svg {
@@ -53,12 +54,14 @@
                         margin-right: 0.75rem;
                     }
 
-                    &:hover {
-                        background: color(cn_back_surface_2);
+                    &:hover:not(.cn_active) {
+                        box-shadow: 
+                            0 0 0 3px darken($color: color(cn_surface_gray), $amount: 40),
+                            0 0 0 6px darken($color: color(cn_surface_gray), $amount: 10);
                     }
 
                     &.cn_active {
-                        background: url('../../../../../../public/textures/noise.png') 10px repeat, linear-gradient(to right bottom, color(cn_dark), color(cn_dark));
+                        background: color(cn_dark);
                         color: color(cn_white);
 
                         svg {
@@ -77,9 +80,10 @@
             button {
                 height: 50px;
                 aspect-ratio: 1/1;
-                margin-left: 1rem;
                 border-radius: 50%;
-                background-color: color(cn_back_surface_1);
+                background-color: color(cn_surface_gray);
+                margin-left: 1rem;
+                transition: all 0.2s ease-in-out;
 
                 img {
                     border-radius: 50%;
@@ -88,8 +92,15 @@
                 }
 
                 svg {
-                    height: 20px;
+                    height: 18px;
                     aspect-ratio: 1/1;
+                }
+
+                &:hover {
+                    background-color: lighten($color: color(cn_surface_gray), $amount: 5);
+                    box-shadow: 
+                        0 0 0 3px lighten($color: color(cn_prime_1), $amount: 2.5),
+                        0 0 0 6px color(cn_surface_gray);
                 }
             }
         }
