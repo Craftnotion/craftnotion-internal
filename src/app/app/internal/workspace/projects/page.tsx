@@ -47,10 +47,10 @@ const ManagementProjectsPage = () => {
                                                     <ProjectIcon />
                                                 </div>
                                                 <div className={styles.cn_project_info}>
+                                                    <p className={styles.cn_project_name}>{project.name}</p>
                                                     <div className={styles.cn_project_badge}>
                                                         <p>{project.status}</p>
                                                     </div>
-                                                    <p className={styles.cn_project_name}>{project.name}</p>
                                                 </div>
                                             </div>
                                             <div className={styles.cn_projects_list_item_control}>
@@ -59,6 +59,7 @@ const ManagementProjectsPage = () => {
                                                         <Image
                                                             src="https://i.pravatar.cc/300"
                                                             fill
+                                                            sizes='50'
                                                             alt='name'
                                                         />
                                                     </div>
@@ -66,6 +67,7 @@ const ManagementProjectsPage = () => {
                                                         <Image
                                                             src="https://i.pravatar.cc/300"
                                                             fill
+                                                            sizes='50'
                                                             alt='name'
                                                         />
                                                     </div>
@@ -73,6 +75,7 @@ const ManagementProjectsPage = () => {
                                                         <Image
                                                             src="https://i.pravatar.cc/300"
                                                             fill
+                                                            sizes='50'
                                                             alt='name'
                                                         />
                                                     </div>
@@ -92,6 +95,18 @@ const ManagementProjectsPage = () => {
                                                         <p className={styles.cn_project_badge_label}>Due Date</p>
                                                         <p className={styles.cn_project_badge_value}>{DateTime.fromJSDate(project.deadline).toFormat('ccc, dd MMM')}</p>
                                                     </div>
+                                                    <div className={styles.cn_project_badge}>
+                                                        <p className={styles.cn_project_badge_label}>Milestones</p>
+                                                        <p className={styles.cn_project_badge_value}>
+                                                            <span>{project.milestones.completed}</span>/{project.milestones.completed}
+                                                        </p>
+                                                    </div>
+                                                    <div className={styles.cn_project_badge}>
+                                                        <p className={styles.cn_project_badge_label}>Tasks</p>
+                                                        <p className={styles.cn_project_badge_value}>
+                                                            <span>{project.tasks.completed}</span>/{project.tasks.completed}
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -108,7 +123,7 @@ const ManagementProjectsPage = () => {
 
 export default ManagementProjectsPage
 
-type StatusListProps = 'Completed' | 'Overdue' | 'On Track' | 'Priority'
+type StatusListProps = 'Completed' | 'Overdue' | 'On Track' | 'Priority' | 'On Hold'
 
 type ProjectsDataProps = {
     id: string;
@@ -121,6 +136,14 @@ type ProjectsDataProps = {
         slug?: string;
     };
     status: StatusListProps;
+    milestones: {
+        total: string;
+        completed: string;
+    };
+    tasks: {
+        total: string;
+        completed: string;
+    };
     team: {
         id: string;
         name: string;
@@ -132,7 +155,7 @@ type ProjectsDataProps = {
 const ProjectsData: ProjectsDataProps = [
     {
         id: '001',
-        name: 'Lyt Til Danke Salmer',
+        name: 'ProjectPal',
         start: new Date(),
         deadline: new Date(),
         updated_at: '2 hours ago',
@@ -140,6 +163,14 @@ const ProjectsData: ProjectsDataProps = [
             name: 'Himanshu Sharma'
         },
         status: 'Completed',
+        milestones: {
+            total: '03',
+            completed: '09'
+        },
+        tasks: {
+            total: '17',
+            completed: '42'
+        },
         team: [
             {
                 id: 'hs01',
@@ -156,7 +187,15 @@ const ProjectsData: ProjectsDataProps = [
         client: {
             name: 'Himanshu Sharma'
         },
-        status: 'Completed',
+        status: 'Priority',
+        milestones: {
+            total: '03',
+            completed: '09'
+        },
+        tasks: {
+            total: '17',
+            completed: '42'
+        },
         team: [
             {
                 id: 'hs01',
@@ -167,14 +206,22 @@ const ProjectsData: ProjectsDataProps = [
     },
     {
         id: '003',
-        name: 'Lyt Til Danke Salmer',
+        name: 'SecondAid App',
         start: new Date(),
         deadline: new Date(),
         updated_at: '2 hours ago',
         client: {
             name: 'Himanshu Sharma'
         },
-        status: 'Completed',
+        status: 'On Track',
+        milestones: {
+            total: '03',
+            completed: '09'
+        },
+        tasks: {
+            total: '17',
+            completed: '42'
+        },
         team: [
             {
                 id: 'hs01',
@@ -185,14 +232,22 @@ const ProjectsData: ProjectsDataProps = [
     },
     {
         id: '004',
-        name: 'Lyt Til Danke Salmer',
+        name: 'MGA',
         start: new Date(),
         deadline: new Date(),
         updated_at: '2 hours ago',
         client: {
             name: 'Himanshu Sharma'
         },
-        status: 'Completed',
+        status: 'Overdue',
+        milestones: {
+            total: '03',
+            completed: '09'
+        },
+        tasks: {
+            total: '17',
+            completed: '42'
+        },
         team: [
             {
                 id: 'hs01',
@@ -203,13 +258,21 @@ const ProjectsData: ProjectsDataProps = [
     },
     {
         id: '005',
-        name: 'Lyt Til Danke Salmer',
+        name: 'Farmstax',
         deadline: new Date(),
         updated_at: '2 hours ago',
         client: {
             name: 'Himanshu Sharma'
         },
-        status: 'Completed',
+        status: 'On Hold',
+        milestones: {
+            total: '03',
+            completed: '09'
+        },
+        tasks: {
+            total: '17',
+            completed: '42'
+        },
         team: [
             {
                 id: 'hs01',
@@ -220,14 +283,22 @@ const ProjectsData: ProjectsDataProps = [
     },
     {
         id: '006',
-        name: 'Lyt Til Danke Salmer',
+        name: 'Nordisk Yoga',
         start: new Date(),
         deadline: new Date(),
         updated_at: '2 hours ago',
         client: {
             name: 'Himanshu Sharma'
         },
-        status: 'Completed',
+        status: 'On Hold',
+        milestones: {
+            total: '03',
+            completed: '09'
+        },
+        tasks: {
+            total: '17',
+            completed: '42'
+        },
         team: [
             {
                 id: 'hs01',

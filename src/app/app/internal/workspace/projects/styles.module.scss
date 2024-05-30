@@ -29,9 +29,9 @@
                 font-weight: 600;
                 color: color(cn_white);
                 position: relative;
+                transition: all 0.2s ease-in-out;
                 box-shadow:
                     0 0 0 3px lighten($color: color(cn_prime_1), $amount: 15);
-                transition: all 0.2s ease-in-out;
 
                 span {
                     width: 2rem;
@@ -174,14 +174,14 @@
                         align-items: center;
                         
                         .cn_icon {
-                            height: 3.5rem;
+                            height: 3rem;
                             aspect-ratio: 1;
                             border-radius: 50%;
                             background-image: linear-gradient(to right bottom, color(cn_back_accent_1), lighten(color(cn_back_accent_1), 15));
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            margin-right: 1.15rem;
+                            margin-right: 0.8rem;
                             transition: all 0.2s ease-in-out;
     
                             svg {
@@ -194,26 +194,26 @@
 
                         .cn_project_info {
 
-                            .cn_project_badge {
-                                padding: 0.25rem 0.5rem;
-                                border-radius: 6px;
-                                background-color: rgba(color(cn_back_accent_1), 0.1);
-                                width: fit-content;
-                                margin-bottom: 0.25rem;
-
-                                p {
-                                    font-size: 0.65rem;
-                                    letter-spacing: 0.15px;
-                                    color: color(cn_dark);
-                                    font-weight: 500;
-                                }
-                            }
-
                             .cn_project_name {
-                                font-size: 1.125rem;
-                                letter-spacing: 0.025rem;
+                                font-size: 1.1rem;
+                                letter-spacing: 0.035rem;
                                 color: color(cn_black_text);
                                 font-weight: 600;
+                                margin-bottom: 0.25rem;
+                            }
+
+                            .cn_project_badge {
+                                width: fit-content;
+                                background-image: linear-gradient(to right, rgba(color(cn_back_accent_1), 0.15), transparent 80%);
+                                border-left: 2.5px solid lighten($color: color(cn_back_accent_1), $amount: 15);
+                                border-radius: 8px;
+                                padding: 0.15rem 0.35rem;
+
+                                p {
+                                    font-size: 0.85rem;
+                                    letter-spacing: 0.25px;
+                                    color: color(cn_dark);
+                                }
                             }
                         }
                     }
@@ -301,6 +301,11 @@
                                     &.cn_project_badge_value {
                                         font-size: 0.775rem;
                                         font-weight: 600;
+
+                                        span {
+                                            font-weight: bold;
+                                            color: color(cn_prime_1);
+                                        }
                                     }
                                 }
                             }
